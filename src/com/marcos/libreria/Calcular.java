@@ -4,49 +4,48 @@ public class Calcular {
     /**
      * Resultado final
      */
-    public static float resultado;
+    public static Float resultado;
     /**
      * Opcion de suma
      */
-    public static final String SUMA="suma";
+    public static final String SUMA = "suma";
     /**
      * Opcion de resta
      */
-    public static final String RESTA="resta";
+    public static final String RESTA = "resta";
     /**
      * Opcion de multiplicacion
      */
-    public static final String MULTIPLICACION="multiplicacion";
+    public static final String MULTIPLICACION = "multiplicacion";
     /**
      * Opcion de division
      */
-    public static final String DIVISION="division";
+    public static final String DIVISION = "division";
 
     /**
-     *
-     * @param num1 primer valor
-     * @param num2 segundo valor
+     * @param num1      primer valor
+     * @param num2      segundo valor
      * @param operacion Nombre de la operacion a realizar, suma, resta, multiplicacion, division
      * @return resultado
      */
-    public static float calcular(float num1, float num2, String operacion) {
+    public static Float calcular(float num1, float num2, String operacion) {
         operacion = operacion.toLowerCase();
 
-        switch(operacion) {
+        switch (operacion) {
             case SUMA:
-                resultado=suma(num1,num2);
+                resultado = suma(num1, num2);
                 break;
             case RESTA:
-                resultado=resta(num1, num2);
+                resultado = resta(num1, num2);
                 break;
             case MULTIPLICACION:
-                resultado=multiplicacion(num1, num2);
+                resultado = multiplicacion(num1, num2);
                 break;
             case DIVISION:
-                resultado=division(num1, num2);
+                resultado = division(num1, num2);
                 break;
             default:
-                System.out.println("parametro no valido: "+operacion);
+                System.out.println("parametro no valido: " + operacion);
                 break;
         }
 
@@ -54,42 +53,54 @@ public class Calcular {
     }
 
     /**
-     *
      * @param num1 primer valor
      * @param num2 segundo valor
      * @return resultado
      */
-    private static float suma(float num1, float num2) {
-        return num1+num2;
+    private static Float suma(float num1, float num2) {
+        try {
+            return num1 + num2;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
-     *
      * @param num1 primer valor
      * @param num2 segundo valor
      * @return resultado
      */
-    private static float resta(float num1, float num2) {
-        return num1-num2;
+    private static Float resta(float num1, float num2) {
+        try {
+            return num1 - num2;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
-     *
      * @param num1 primer valor
      * @param num2 segundo valor
      * @return resultado
      */
-    private static float multiplicacion(float num1, float num2) {
-        return num1*num2;
+    private static Float multiplicacion(float num1, float num2) {
+        try {
+            return num1 * num2;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
-     *
      * @param num1 primer valor
      * @param num2 segundo valor
      * @return resultado
      */
-    private static float division(float num1, float num2) {
-        return num1/num2;
+    private static Float division(float num1, float num2) {
+        try {
+            return num1 / num2;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
