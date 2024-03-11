@@ -21,6 +21,10 @@ public class Calcular {
      * Opcion de division
      */
     public static final String DIVISION = "division";
+    /**
+     * Opcion de raices
+     */
+    public static final String RAIZ = "raiz";
 
     /**
      * @param num1      primer valor
@@ -43,6 +47,9 @@ public class Calcular {
                 break;
             case DIVISION:
                 resultado = division(num1, num2);
+                break;
+            case RAIZ:
+                resultado = raiz(num1, num2);
                 break;
             default:
                 System.out.println("parametro no valido: " + operacion);
@@ -99,6 +106,24 @@ public class Calcular {
     private static Float division(float num1, float num2) {
         try {
             return num1 / num2;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * @param radicando de la raiz
+     * @param indice de la raiz
+     * @return resultado
+     */
+    private static Float raiz(float radicando, float indice) {
+        // Descomentar para solo permitir raices cuadradas y cubicas
+        /*if (indice != 2 && indice != 3) {
+            System.out.println("El indice debe ser 2 o 3");
+            return null;
+        }*/
+        try {
+            return (float) Math.pow(radicando, 1/indice);
         } catch (Exception e) {
             return null;
         }
