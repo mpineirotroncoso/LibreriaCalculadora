@@ -117,11 +117,15 @@ public class Calcular {
      * @return resultado
      */
     private static Float raiz(float radicando, float indice) {
+        // Descomentar para solo permitir raices cuadradas y cubicas
+        /*if (indice != 2 && indice != 3) {
+            System.out.println("El indice debe ser 2 o 3");
+            return null;
+        }*/
         try {
             return (float) Math.pow(radicando, 1/indice);
         } catch (Exception e) {
             return null;
         }
-
     }
 }
