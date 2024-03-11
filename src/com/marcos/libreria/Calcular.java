@@ -117,6 +117,6 @@ public class Calcular {
      * @return resultado
      */
     private static Float raiz(float radicando, float indice) {
-        return null;
+        return (float) Math.pow(radicando, 1/indice);
     }
 }
